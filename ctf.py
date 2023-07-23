@@ -40,7 +40,9 @@ def wpscan():
 
 if __name__ == "__main__":
     for i in args:
-        if i == "--nmap":
+        if i == "ctf.py":
+            continue
+        elif i == "--nmap":
             nmap()
         elif i == "--hydra_ssh":
             username = input("Hydra: Please input the username: ")
