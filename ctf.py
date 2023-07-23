@@ -11,7 +11,7 @@ hydra_was_called_before = False
 hydra_username = None
 
 def run_as_new_instance(cmd):
-    subprocess.run(['gnome-terminal', '--wait', '--', 'bash', '-c', cmd])
+    subprocess.run(['gnome-terminal', '--', 'bash', '-c', f'{cmd}; echo Press Enter to continue...; read'])
 
 def nmap():
     command = "nmap -sC -sV " + ip_addr
@@ -63,6 +63,5 @@ if __name__ == "__main__":
             wpscan()
         else:
             print("Unknown command: " + i)
-        time.sleep(4)
 
 print("Done!")
