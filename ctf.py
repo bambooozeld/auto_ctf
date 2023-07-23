@@ -11,7 +11,7 @@ hydra_was_called_before = False
 hydra_username = None
 
 def run_as_new_instance(cmd):
-    subprocess.run(['gnome-terminal', '--', 'bash', '-c', cmd])
+    subprocess.run(['gnome-terminal', '--wait', '--', 'bash', '-c', cmd])
 
 def nmap():
     command = "nmap -sC -sV " + ip_addr
